@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>毛玻璃效果</title>
+    <style>
+        body{
+            font-family:"Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+        }
+        .content{
+            font-size:20px;
+            line-height:2;
+            height:20em;
+            width:30em;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{  
+            position:relative;         
+            width:24em;
+            padding:1em;
+            background: hsla(0, 0%, 100%,0.3);
+            z-index: 1;
+            overflow: hidden;
+        }
+        .content,.main::before{
+            background: url('../img/aCat.jpg') 0 0 / cover;
+        }
+        .main::before{
+            content:'';
+            position:absolute;
+            top:0;bottom:0;left:0;right:0;
+            z-index: -1;
+            filter:blur(1em);
+            margin:-1.5em;
+        }
+        .main > footer{
+            position:absolute;
+            bottom:0;
+            font-size: 1.1em;
+            right:2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="main">
+            毛玻璃效果是一种很有视觉冲击力的特效，怎么用CSS来实现呢？主要用到的肯定是半透明的概念，
+            但是半透明肯定会导致文字和背景混淆导致不清楚的情况。
+            解决的方式就是在文字层的背后加上一层作了模糊处理的背层。
+            <footer>---
+                <cite>
+                    Toulon Handsome
+                </cite>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
